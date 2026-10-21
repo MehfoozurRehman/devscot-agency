@@ -23,7 +23,6 @@ What the code does today:
 - **Styling**: Tailwind CSS v4 through `@tailwindcss/postcss` (`postcss.config.mjs`).
 - **Fonts and images**: `next/font` for Geist, `next/image` for the logo, both handled by the framework.
 
-The package scripts run `node api.js` before each Next.js command. See the notes below.
 
 ## Running it locally
 
@@ -41,7 +40,6 @@ Other scripts: `pnpm build`, `pnpm start`, `pnpm lint`.
 ## What I learned / what I'd do next
 
 - Replace the starter page with the agency content. The metadata title and description still read "Create Next App".
-- Every script runs `api.js` before Next.js. Review that file, document what it does, or remove it from the scripts.
 - Add the services, case studies and contact form that the old README described. None of them are in the code yet.
 - There are no tests. Add at least a smoke test for the home page once the content exists.
 
