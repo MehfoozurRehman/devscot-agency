@@ -1,43 +1,49 @@
 # DevScot Digital Agency Website
 
-Official digital product development and software engineering agency website for DevScot built with Next.js 15 App Router (Turbopack), React 19, and Tailwind CSS v4.
+A Next.js 15 App Router site scaffold for the DevScot agency, set up with React 19, TypeScript and Tailwind CSS v4. The agency content is not written yet; the home page is still the starter template.
 
-## Overview
+## The problem
 
-`devscot-agency` showcases custom software development services, agency client case studies, technical capabilities, and client consultation request forms.
+An agency site has to explain what the studio builds and make it easy for a prospective client to get in touch. This repo is the foundation for that site: routing, fonts, styling and build tooling are in place, and the page content is the next piece.
 
-## Tech Stack
+## What it does
 
-- **Framework**: [Next.js](https://nextjs.org/) (v15 App Router, Turbopack)
-- **Frontend Core**: React 19, TypeScript
-- **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`)
+What the code does today:
 
-## Prerequisites
+- Renders a root layout (`app/layout.tsx`) that loads Geist Sans and Geist Mono through `next/font` and sets the page metadata.
+- Serves a single home page (`app/page.tsx`) that still contains the create-next-app starter content.
+- Styles with Tailwind CSS v4 utility classes, plus CSS variables for light and dark colour schemes in `app/globals.css`.
+- Ships static SVG assets in `public/` and uses `next/image` for the logo.
+- Runs lint through `next lint`.
 
-- Node.js (v20 or higher recommended)
-- Package manager (`pnpm` recommended)
+## How it's built
 
-## Getting Started
+- **Framework**: Next.js 15.5 with the App Router. `pnpm dev` runs Turbopack.
+- **UI**: React 19.2 and TypeScript 5.
+- **Styling**: Tailwind CSS v4 through `@tailwindcss/postcss` (`postcss.config.mjs`).
+- **Fonts and images**: `next/font` for Geist, `next/image` for the logo, both handled by the framework.
 
-1. **Install dependencies**:
-   ```bash
-   pnpm install
-   ```
+The package scripts run `node api.js` before each Next.js command. See the notes below.
 
-2. **Run the Development Server**:
-   ```bash
-   pnpm dev
-   ```
+## Running it locally
 
-3. **Access the Website**:
-   Open `http://localhost:3000` in your web browser.
+Requires Node.js 20 or newer. `pnpm` is recommended.
 
-## Available Scripts
+```bash
+pnpm install
+pnpm dev
+```
 
-- `pnpm dev` - Starts the Next.js development server with Turbopack.
-- `pnpm build` - Compiles the application for production.
-- `pnpm start` - Starts the production server.
-- `pnpm lint` - Runs Next.js ESLint linting.
+Open http://localhost:3000.
+
+Other scripts: `pnpm build`, `pnpm start`, `pnpm lint`.
+
+## What I learned / what I'd do next
+
+- Replace the starter page with the agency content. The metadata title and description still read "Create Next App".
+- Every script runs `api.js` before Next.js. Review that file, document what it does, or remove it from the scripts.
+- Add the services, case studies and contact form that the old README described. None of them are in the code yet.
+- There are no tests. Add at least a smoke test for the home page once the content exists.
 
 ## Author
 
